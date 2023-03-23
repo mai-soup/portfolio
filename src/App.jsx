@@ -2,6 +2,7 @@ import BioSection from "./BioSection";
 import Container from "./Container";
 import Footer from "./Footer";
 import LinksContainer from "./LinksContainer";
+import TechSection from "./TechSection";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Container>
         <LinksContainer />
         <BioSection />
+        <TechSection />
       </Container>
       <Footer />
     </div>
