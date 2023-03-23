@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply text-off-white;
+  }
+  h1,
+  h2 {
+    @apply text-7xl;
+    @apply tracking-tight;
+    @apply font-bold;
+  }
+  h3 {
+    @apply text-5xl;
+    @apply leading-tight;
+    @apply tracking-tight;
+    @apply font-bold;
+  }
+  h4 {
+    @apply text-2xl;
+    @apply font-bold;
+  }
+  p,
+  a {
+    @apply text-lg;
+    @apply font-medium;
+    @apply text-light-grey;
+  }
+}
+
+#root {
+  width: 100vw;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
