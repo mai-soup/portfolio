@@ -1,36 +1,60 @@
 import Button from "./Button";
+import { useForm } from "react-hook-form";
 
 const inputClasses =
   "placeholder:text-light-grey mt-0 block w-full px-0.5 border-0 border-b-2 border-light-grey bg-dark-grey focus:border-light-blue";
 
-const ContactForm = ({
-  onNameChange,
-  onEmailChange,
-  onMessageChange,
-  onSubmit,
-  enableSubmission,
-}) => {
+const ErrorParagraph = ({ children }) => {
   return (
-    <form action="" onSubmit={onSubmit}>
+    <p role="alert" className="text-light-red">
+      {children}
+    </p>
+  );
+};
+
+const ContactForm = ({ onSubmit, submitState }) => {
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm({
+    defaultValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
+  });
+
+  return (
+    <form action="" onSubmit={handleSubmit(onSubmit)}>
       <label className="block mb-8" htmlFor="name">
         <input
           type="text"
           name="name"
           id="name"
           placeholder="NAME"
+          autoComplete="off"
           className={inputClasses}
-          onChange={onNameChange}
+          {...register("name", { required: true })}
         />
+        {errors.name && <ErrorParagraph>First name is required</ErrorParagraph>}
       </label>
       <label className="block mb-8" htmlFor="email">
         <input
-          type="email"
+          type="text"
           name="email"
           id="email"
+          autoComplete="off"
           placeholder="EMAIL"
           className={inputClasses}
-          onChange={onEmailChange}
+          {...register("email", {
+            required: true,
+            pattern: /[^@\s]+@[^@\s]+\.[^@\s]+/,
+          })}
         />
+        {errors.email && (
+          <ErrorParagraph>Please enter a valid email address.</ErrorParagraph>
+        )}
       </label>
       <label className="block mb-8" htmlFor="message">
         <textarea
@@ -39,11 +63,16 @@ const ContactForm = ({
           rows="2"
           className={inputClasses}
           placeholder="MESSAGE"
-          onChange={onMessageChange}
+          {...register("message", { required: true })}
         ></textarea>
+        {errors.message && <ErrorParagraph>Message is required</ErrorParagraph>}
       </label>
-      <Button className="float-right" disabled={!enableSubmission} btn>
-        Send message
+      <Button className="float-right" btn>
+        {!submitState
+          ? "Send message"
+          : submitState === 1
+          ? "Sending"
+          : "Sent!"}
       </Button>
     </form>
   );

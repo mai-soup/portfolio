@@ -8,33 +8,11 @@ const ENDPOINT =
   "https://public.herotofu.com/v1/8434d380-c94e-11ed-9775-bbd70e6110ab";
 
 const Footer = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [submissionEnabled, setSubmissionEnabled] = useState(false);
-  const [isSubmitting, setSubmitting] = useState(false);
+  const [submitState, setSubmitState] = useState(0);
 
-  const handleNameChange = e => {
-    setName(e.target.value);
-    checkSubmissionAllowed();
-  };
-  const handleEmailChange = e => {
-    setEmail(e.target.value);
-    checkSubmissionAllowed();
-  };
-  const handleMessageChange = e => {
-    setMessage(e.target.value);
-    checkSubmissionAllowed();
-  };
-
-  const checkSubmissionAllowed = () => {
-    setSubmissionEnabled(!!(name && email && message));
-  };
-
-  const handleSubmission = e => {
-    e.preventDefault();
-    setSubmissionEnabled(false);
-    setSubmitting(true);
+  const handleSubmission = ({ name, email, message }) => {
+    setSubmitState(1);
+    console.log({ name, email, message });
 
     axios
       .post(ENDPOINT, {
@@ -42,14 +20,8 @@ const Footer = () => {
         email,
         message,
       })
-      .then(response => {
-        console.log(response);
-      })
       .then(() => {
-        setName("");
-        setEmail("");
-        setMessage("");
-        setSubmitting(false);
+        setSubmitState(2);
       })
       .catch(e => {
         console.log(e);
@@ -59,19 +31,23 @@ const Footer = () => {
   return (
     <div className="w-full bg-dark-grey pt-8" id="contact">
       <Container>
-        <h2>Contact me</h2>
-        <p className="py-4">
-          This form does not work just yet, but soon will. Apologies for any
-          inconvenience! Feel free to contact me on social networks, though.
-        </p>
-        <ContactForm
-          enableSubmission={submissionEnabled}
-          onNameChange={handleNameChange}
-          onEmailChange={handleEmailChange}
-          onMessageChange={handleMessageChange}
-          onSubmit={handleSubmission}
-          isSubmitting={isSubmitting}
-        />
+        <div className="flex flex-col text-center md:text-left md:flex-row justify-between md:gap-9">
+          <div className="pb-8 md:basis-1/2">
+            <h2 className="pb-4">Contact me</h2>
+            <p>
+              Got a project I might be interested in? Looking for an addition to
+              your team? Fill out the form and I'll get back to you as soon as
+              possible.
+            </p>
+          </div>
+          <div className="pb-8 basis-1/2">
+            <ContactForm
+              onSubmit={handleSubmission}
+              submitState={submitState}
+            />
+          </div>
+        </div>
+
         <LinksContainer />
       </Container>
     </div>

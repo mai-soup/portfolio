@@ -43,3 +43,9 @@
   min-height: 100dvh;
   height: fit-content;
 }
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
