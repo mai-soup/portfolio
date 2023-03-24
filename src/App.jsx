@@ -2,6 +2,7 @@ import BioSection from "./BioSection";
 import Container from "./Container";
 import Footer from "./Footer";
 import LinksContainer from "./LinksContainer";
+import ProjectsSection from "./ProjectsSection";
 import TechSection from "./TechSection";
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
         <LinksContainer />
         <BioSection />
         <TechSection />
+        <ProjectsSection />
       </Container>
       <Footer />
     </div>
