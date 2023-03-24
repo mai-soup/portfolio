@@ -2,7 +2,7 @@ import Button from "./Button";
 import { useForm } from "react-hook-form";
 
 const inputClasses =
-  "disabled:opacity-50 placeholder:text-light-grey mt-0 block w-full px-0.5 border-0 border-b-2 border-light-grey bg-dark-grey focus:border-light-blue";
+  "disabled:opacity-50 placeholder:text-light-grey mt-0 block w-full px-0.5 border-0 border-b-2 border-light-grey bg-dark-grey focus:border-dark-red";
 
 const ErrorParagraph = ({ children }) => {
   return (

@@ -7,7 +7,7 @@ const Button = ({
 }) => {
   return btn ? (
     <button
-      className="py-2 border-b-2 border-light-red uppercase hover:text-off-white hover:border-light-blue transition-colors disabled:border-light-grey disabled:opacity-50"
+      className="py-2 border-b-2 border-light-red uppercase hover:text-off-white hover:border-dark-red transition-colors disabled:border-light-grey disabled:opacity-50"
       disabled={disabled}
     >
       {children}
@@ -16,7 +16,7 @@ const Button = ({
     <a
       href={href || "#"}
       target={newtab ? "_blank" : ""}
-      className="py-2 border-b-2 border-light-red uppercase hover:text-off-white hover:border-light-blue transition-colors"
+      className="py-2 border-b-2 border-light-red uppercase hover:text-off-white hover:border-dark-red transition-colors"
     >
       {children}
     </a>
