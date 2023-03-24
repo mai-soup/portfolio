@@ -2,7 +2,7 @@ import Button from "./Button";
 
 const BioSection = () => {
   return (
-    <div className="py-8">
+    <div className="py-8 text-center md:text-left">
       <h1 className="mb-8">
         Hi there!
         <br />I am{" "}
