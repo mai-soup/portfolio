@@ -8,7 +8,7 @@ const BioSection = () => {
         <br />I am{" "}
         <span className="underline decoration-light-red">Maijs Garais</span>.
       </h1>
-      <p className="mb-8">
+      <p className="mb-8 md:w-1/2">
         A frontend developer with experience in native Android development,
         using my technical knowledge to create seamless experiences across
         platforms. Latvian, based in Northern England.
