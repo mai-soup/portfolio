@@ -11,7 +11,7 @@ module.exports = {
         "light-grey": "#CFDBD5",
         "dark-grey": "#333533",
         "darkest-grey": "#242423",
-        "light-blue": "#4488EF",
+        "dark-red": "#e21313",
       },
       fontFamily: {
         sans: ["Lexend Deca", ...defaultTheme.fontFamily.sans],
