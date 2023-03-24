@@ -2,7 +2,7 @@ import Button from "./Button";
 import { useForm } from "react-hook-form";
 
 const inputClasses =
-  "placeholder:text-light-grey mt-0 block w-full px-0.5 border-0 border-b-2 border-light-grey bg-dark-grey focus:border-light-blue";
+  "disabled:opacity-50 placeholder:text-light-grey mt-0 block w-full px-0.5 border-0 border-b-2 border-light-grey bg-dark-grey focus:border-light-blue";
 
 const ErrorParagraph = ({ children }) => {
   return (
@@ -35,6 +35,7 @@ const ContactForm = ({ onSubmit, submitState }) => {
           placeholder="NAME"
           autoComplete="off"
           className={inputClasses}
+          disabled={submitState !== 0}
           {...register("name", { required: true })}
         />
         {errors.name && <ErrorParagraph>First name is required</ErrorParagraph>}
@@ -47,6 +48,7 @@ const ContactForm = ({ onSubmit, submitState }) => {
           autoComplete="off"
           placeholder="EMAIL"
           className={inputClasses}
+          disabled={submitState !== 0}
           {...register("email", {
             required: true,
             pattern: /[^@\s]+@[^@\s]+\.[^@\s]+/,
@@ -63,11 +65,12 @@ const ContactForm = ({ onSubmit, submitState }) => {
           rows="2"
           className={inputClasses}
           placeholder="MESSAGE"
+          disabled={submitState !== 0}
           {...register("message", { required: true })}
         ></textarea>
         {errors.message && <ErrorParagraph>Message is required</ErrorParagraph>}
       </label>
-      <Button className="float-right" btn>
+      <Button className="float-right" disabled={submitState !== 0} btn>
         {!submitState
           ? "Send message"
           : submitState === 1
