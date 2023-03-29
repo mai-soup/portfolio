@@ -11,7 +11,11 @@ const LinksContainer = () => {
           url="https://linkedin.com/in/maijs-garais"
         />
         <SocialIcon name="website" url="https://mai-soup.github.io" />
-        <SocialIcon name="mastodon" url="https://social.linux.pizza/@maijs" />
+        <SocialIcon
+          name="mastodon"
+          url="https://social.linux.pizza/@maijs"
+          rel="me"
+        />
       </div>
     </div>
   );
