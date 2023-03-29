@@ -1,8 +1,8 @@
 import paths from "./assets/iconPaths";
 
-const SocialIcon = ({ name, url }) => {
+const SocialIcon = ({ name, url, rel }) => {
   return (
-    <a href={url}>
+    <a href={url} rel={rel}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
