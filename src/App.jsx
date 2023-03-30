@@ -2,6 +2,7 @@ import HomePage from "./HomePage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ProjectDetailsPage from "./ProjectDetailsPage";
 import PersonalWebsite from "./projects/PersonalWebsite";
+import YelpCamp from "./projects/YelpCamp";
 
 function App() {
   console.log(`
@@ -29,6 +30,12 @@ function App() {
           title="Personal website"
           projectContents={<PersonalWebsite />}
         />
+      ),
+    },
+    {
+      path: "/projects/yelpcamp",
+      element: (
+        <ProjectDetailsPage title="YelpCamp" projectContents={<YelpCamp />} />
       ),
     },
   ]);
