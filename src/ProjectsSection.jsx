@@ -7,7 +7,9 @@ const ProjectsSection = () => {
     <div>
       <div className="flex flex-col md:flex-row items-center justify-between mb-8 gap-4">
         <h2 className="heading-xl">Projects</h2>
-        <Button href="#contact">Contact me</Button>
+        <Button btn scrollTo="#contact">
+          Contact me
+        </Button>
       </div>
       <div className="flex flex-row text-center md:text-left items-center flex-wrap">
         {projects.map((project, i) => (

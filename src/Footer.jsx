@@ -47,9 +47,8 @@ const Footer = () => {
             />
           </div>
         </div>
-
-        <LinksContainer />
       </Container>
+      <LinksContainer />
     </div>
   );
 };
