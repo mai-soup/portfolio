@@ -1,8 +1,7 @@
-import Footer from "./Footer";
 import HomePage from "./HomePage";
-import LinksContainer from "./LinksContainer";
-import { Routes, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ProjectDetailsPage from "./ProjectDetailsPage";
+import PersonalWebsite from "./projects/PersonalWebsite";
 
 function App() {
   console.log(`
@@ -14,19 +13,31 @@ function App() {
   ╚═╝  ╚═╝╚══════╝   ╚═╝          ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚══════╝╚═╝
   `);
 
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <HomePage />,
+    },
+    {
+      path: "projects",
+      element: <ProjectDetailsPage />,
+    },
+    {
+      path: "/projects/personal-website",
+      element: (
+        <ProjectDetailsPage
+          title="Personal website"
+          projectContents={<PersonalWebsite />}
+        />
+      ),
+    },
+  ]);
+
   return (
     <div className="bg-darkest-grey w-full h-full min-h-screen overflow-x-hidden flex flex-col">
       <span id="top" />
-      <LinksContainer />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/projects" element={<ProjectDetailsPage />} />
-        <Route
-          path="/projects/personal-website"
-          element={<ProjectDetailsPage title="Personal website" />}
-        />
-      </Routes>
-      <Footer />
+
+      <RouterProvider router={router} />
     </div>
   );
 }

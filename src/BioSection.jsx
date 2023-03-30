@@ -13,7 +13,9 @@ const BioSection = () => {
         using my technical knowledge to create seamless experiences across
         platforms. Latvian, based in Northern England.
       </p>
-      <Button href="#contact">Contact Me</Button>
+      <Button btn scrollTo="#contact">
+        Contact Me
+      </Button>
     </div>
   );
 };

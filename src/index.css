@@ -30,10 +30,15 @@
   a,
   button,
   input,
-  textarea {
+  textarea,
+  ul {
     @apply text-lg;
     @apply font-medium;
     @apply text-light-grey;
+  }
+
+  ul {
+    @apply list-disc;
   }
 }
 

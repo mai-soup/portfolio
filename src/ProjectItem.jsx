@@ -11,7 +11,7 @@ const ProjectItem = ({ project, className }) => {
         <img className="w-full" src={project.imgLarge} />
         {/* overlay, only shown on md and above */}
         <div className="hidden absolute top-0 left-0 h-full w-full bg-black bg-opacity-75 transition-all duration-300 md:flex flex-col justify-center items-center gap-3 opacity-0 hover:opacity-100">
-          <Link to="/projects">
+          <Link to="/projects/personal-website/">
             <Button btn>Read more</Button>
           </Link>
         </div>
