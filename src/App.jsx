@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ProjectDetailsPage from "./ProjectDetailsPage";
 import PersonalWebsite from "./projects/PersonalWebsite";
 import YelpCamp from "./projects/YelpCamp";
+import ColourPicker from "./projects/ColourPicker";
 
 function App() {
   console.log(`
@@ -36,6 +37,15 @@ function App() {
       path: "/projects/yelpcamp",
       element: (
         <ProjectDetailsPage title="YelpCamp" projectContents={<YelpCamp />} />
+      ),
+    },
+    {
+      path: "/projects/colour-picker",
+      element: (
+        <ProjectDetailsPage
+          title="Colour picker"
+          projectContents={<ColourPicker />}
+        />
       ),
     },
   ]);
