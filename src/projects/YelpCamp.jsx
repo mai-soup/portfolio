@@ -40,8 +40,6 @@ const YelpCamp = () => {
         <li>Display all campsites</li>
         <li>Responsive design</li>
       </ul>
-      <p></p>
-      <p></p>
       <h2>Spotlight</h2>
       <img
         src={mapSs}

@@ -30,13 +30,14 @@ const projects = [
     github: "https://github.com/mai-soup/yelpcamp",
     link: "/projects/yelpcamp",
   },
-  // {
-  //   title: "Colour Picker",
-  //   technologies: ["HTML", "CSS", "React", "React Router", "Material UI"],
-  //   imgLarge: thumbColourPickerLg,
-  //   url: "https://react-colour-picker.vercel.app/",
-  //   github: "https://github.com/mai-soup/react-colour-picker",
-  // },
+  {
+    title: "Colour Picker",
+    technologies: ["HTML", "CSS", "React", "React Router", "Material UI"],
+    imgLarge: thumbColourPickerLg,
+    url: "https://react-colour-picker.vercel.app/",
+    github: "https://github.com/mai-soup/react-colour-picker",
+    link: "/projects/colour-picker",
+  },
   // {
   //   title: "Hangman",
   //   technologies: ["HTML", "CSS", "React", "Tailwind"],
