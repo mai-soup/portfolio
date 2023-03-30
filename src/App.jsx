@@ -4,6 +4,7 @@ import ProjectDetailsPage from "./ProjectDetailsPage";
 import PersonalWebsite from "./projects/PersonalWebsite";
 import YelpCamp from "./projects/YelpCamp";
 import ColourPicker from "./projects/ColourPicker";
+import Hangman from "./projects/Hangman";
 
 function App() {
   console.log(`
@@ -46,6 +47,12 @@ function App() {
           title="Colour picker"
           projectContents={<ColourPicker />}
         />
+      ),
+    },
+    {
+      path: "/projects/hangman",
+      element: (
+        <ProjectDetailsPage title="Hangman" projectContents={<Hangman />} />
       ),
     },
   ]);
