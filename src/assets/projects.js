@@ -2,6 +2,7 @@ import thumbHangmanLg from "./images/hangman.png";
 import thumbMaiSoupLg from "./images/mai-soup.png";
 import thumbColourPickerLg from "./images/react-colour-picker.png";
 import thumbYelpcampLg from "./images/yelpcamp.png";
+import thumbAcnhLg from "./images/acnh.png";
 
 const projects = [
   {
@@ -36,13 +37,21 @@ const projects = [
     github: "https://github.com/mai-soup/react-colour-picker",
     link: "/projects/colour-picker",
   },
+  // {
+  //   title: "Hangman",
+  //   technologies: ["HTML", "CSS", "React", "Tailwind"],
+  //   imgLarge: thumbHangmanLg,
+  //   url: "https://hangman-two-psi.vercel.app/",
+  //   github: "https://github.com/mai-soup/hangman",
+  //   link: "/projects/hangman",
+  // },
   {
-    title: "Hangman",
+    title: "ACNH Music Player",
     technologies: ["HTML", "CSS", "React", "Tailwind"],
-    imgLarge: thumbHangmanLg,
-    url: "https://hangman-two-psi.vercel.app/",
-    github: "https://github.com/mai-soup/hangman",
-    link: "/projects/hangman",
+    imgLarge: thumbAcnhLg,
+    url: "https://acnh-player.vercel.app/",
+    github: "https://github.com/mai-soup/acnh-player",
+    link: "/projects/acnh-player",
   },
 ];
 
