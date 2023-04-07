@@ -5,6 +5,7 @@ import PersonalWebsite from "./projects/PersonalWebsite";
 import YelpCamp from "./projects/YelpCamp";
 import ColourPicker from "./projects/ColourPicker";
 import Hangman from "./projects/Hangman";
+import AcnhPlayer from "./projects/AcnhPlayer";
 
 function App() {
   console.log(`
@@ -53,6 +54,15 @@ function App() {
       path: "/projects/hangman",
       element: (
         <ProjectDetailsPage title="Hangman" projectContents={<Hangman />} />
+      ),
+    },
+    {
+      path: "/projects/acnh-player",
+      element: (
+        <ProjectDetailsPage
+          title="ACNH Music Player"
+          projectContents={<AcnhPlayer />}
+        />
       ),
     },
   ]);
