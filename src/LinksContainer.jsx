@@ -13,10 +13,7 @@ const LinksContainer = () => {
         </Link>
         <div className="flex flex-row items-center gap-3 justify-between">
           <SocialIcon name="github" url="https://github.com/mai-soup" />
-          <SocialIcon
-            name="linkedin"
-            url="https://linkedin.com/in/maijs-garais"
-          />
+          <SocialIcon name="linkedin" url="https://linkedin.com/in/maijs" />
           <SocialIcon name="website" url="https://mai-soup.github.io" />
           <SocialIcon
             name="mastodon"
